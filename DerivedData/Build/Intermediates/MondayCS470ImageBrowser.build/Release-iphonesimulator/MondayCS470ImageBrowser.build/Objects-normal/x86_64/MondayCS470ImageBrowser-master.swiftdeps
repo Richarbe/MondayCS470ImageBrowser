@@ -1,0 +1,6 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "7c748bd0b3b8df443f191856867ec0a6"
+build_time: [557278684, 407922000]
+inputs:
+  "/Users/student/test_twinklebear/MondayCS470ImageBrowser/MondayCS470ImageBrowser/ViewController.swift": [9223372036854775807, 0]
+  "/Users/student/test_twinklebear/MondayCS470ImageBrowser/MondayCS470ImageBrowser/AppDelegate.swift": [9223372036854775807, 0]
