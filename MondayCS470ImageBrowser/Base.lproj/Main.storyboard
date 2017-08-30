@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BsR-Sb-tdO">
-                                <rect key="frame" x="16" y="67" width="343" height="325"/>
+                                <rect key="frame" x="16" y="104" width="343" height="222"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jH5-ry-Fp5">
@@ -33,7 +33,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="index" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzO-Lc-6Xc">
-                                <rect key="frame" x="16" y="391" width="343" height="35"/>
+                                <rect key="frame" x="16" y="61" width="343" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfs-eq-DoR">
+                                <rect key="frame" x="16" y="415" width="343" height="222"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="index" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlO-SA-Hlx">
+                                <rect key="frame" x="16" y="372" width="343" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="index" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeS-Wk-ni1">
+                                <rect key="frame" x="16" y="797" width="343" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTr-dl-Quj">
+                                <rect key="frame" x="16" y="334" width="343" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -50,18 +75,21 @@
                     <connections>
                         <outlet property="ImageIndex" destination="CzO-Lc-6Xc" id="Qg6-R0-Koe"/>
                         <outlet property="ImageView" destination="BsR-Sb-tdO" id="rHS-8l-uPY"/>
+                        <outlet property="SecondImageIndex" destination="dlO-SA-Hlx" id="zuG-vx-9YG"/>
+                        <outlet property="SecondImageTitle" destination="bTr-dl-Quj" id="4K5-r0-DTx"/>
+                        <outlet property="SecondImageView" destination="cfs-eq-DoR" id="YM4-Xr-piJ"/>
                         <outlet property="titleOfImage" destination="jH5-ry-Fp5" id="vYX-aC-wdB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="xgr-gL-a2P">
+                <swipeGestureRecognizer direction="down" id="xgr-gL-a2P">
                     <connections>
-                        <action selector="didSwipeRight:" destination="BYZ-38-t0r" id="K9O-W2-UdN"/>
+                        <action selector="didSwipeDown:" destination="BYZ-38-t0r" id="Qzb-2L-Oui"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="qYZ-ff-RXi">
+                <swipeGestureRecognizer direction="up" id="qYZ-ff-RXi">
                     <connections>
-                        <action selector="didSwipeLeft:" destination="BYZ-38-t0r" id="PNt-WV-bhL"/>
+                        <action selector="didSwipeUp:" destination="BYZ-38-t0r" id="nNf-W6-cW0"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

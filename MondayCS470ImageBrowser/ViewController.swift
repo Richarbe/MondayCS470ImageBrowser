@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleOfImage: UILabel!
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var ImageIndex: UILabel!
+    
+    @IBOutlet weak var SecondImageTitle: UILabel!
+    @IBOutlet weak var SecondImageIndex: UILabel!
+    @IBOutlet weak var SecondImageView: UIImageView!
+    
     private let baseURLstr = "https://www.cs.sonoma.edu/~kooshesh/cs470/sf_pics/"
     private let imageNames = ["ggb_1.jpg", "bay_b_1.jpg", "city_1.jpg",
                               "ggb_2.jpg", "ggb_3.jpg", "city_2.jpg",
@@ -23,8 +28,7 @@ class ViewController: UIViewController {
                                "City View 3", "Golden Gate Bridge 3", "City View 4", "City View 5"]
     var currentIdx = 0
 
-    @IBAction func didSwipeRight(_ sender: UISwipeGestureRecognizer) {
-        print("didSipeRight")
+    @IBAction func didSwipeDown(_ sender: UISwipeGestureRecognizer) {
         /*
         if(currentIdx > 0){
             currentIdx -= 1
@@ -39,8 +43,7 @@ class ViewController: UIViewController {
         displayImage()
     }
     
-    @IBAction func didSwipeLeft(_ sender: UISwipeGestureRecognizer) {
-        print("didSipeLeft")
+    @IBAction func didSwipeUp(_ sender: UISwipeGestureRecognizer) {
         /*
         if(currentIdx < imageNames.count-1){
             currentIdx += 1
@@ -61,6 +64,12 @@ class ViewController: UIViewController {
             ImageView.image = image
             titleOfImage.text = imageTitles[currentIdx]
             ImageIndex.text = "\(currentIdx + 1)/\(imageNames.count)"
+        }
+        let SecondIdx = (currentIdx + 1) % imageNames.count
+        if let url = URL(string: baseURLstr + imageNames[SecondIdx]), let data = try? Data(contentsOf: url), let image = UIImage(data: data){
+            SecondImageView.image = image
+            SecondImageTitle.text = imageTitles[SecondIdx]
+            SecondImageIndex.text = "\(SecondIdx + 1)/\(imageNames.count)"
         }
     }
     override func didReceiveMemoryWarning() {
